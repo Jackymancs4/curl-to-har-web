@@ -1,7 +1,7 @@
 var curlToHar = require('curl-to-har');
 
-window.onload = function() {
-    var $ = function(id) {
+window.onload = function () {
+    var $ = function (id) {
         return document.getElementById(id);
     };
 
@@ -17,15 +17,12 @@ window.onload = function() {
 
     }
 
-    $('hartext').onchange = function() {
+    $('hartext').onchange = function () {
         var out, result, harText = $('hartext').value;
 
         if (!harText) {
             return;
         }
-
-console.log(harText);
-
 
         out = $('curltext');
         try {
@@ -40,7 +37,7 @@ console.log(harText);
         }
 
         if (Array.isArray(result)) {
-            result.forEach(function(command, i) {
+            result.forEach(function (command, i) {
                 if (!command) {
                     command = 'Unable to parse at index ' + i + '.';
                 }
